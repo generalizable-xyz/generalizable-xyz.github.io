@@ -1,25 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
         
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        if (name && email && subject && message) {
-            alert('Thank you for your message! We will get back to you within 24 hours.');
-            contactForm.reset();
-        } else {
-            alert('Please fill in all required fields.');
-        }
-    });
+        // Close menu when clicking a link
+        const menuLinks = document.querySelectorAll('.nav-links a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
     
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-    navLinks.forEach(link => {
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
