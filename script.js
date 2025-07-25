@@ -3,10 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
+    console.log('Menu button found:', mobileMenuToggle);
+    console.log('Nav links found:', navLinks);
+    
     if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Menu clicked!');
             navLinks.classList.toggle('active');
+            console.log('Active class toggled:', navLinks.classList.contains('active'));
         });
         
         // Close menu when clicking a nav link

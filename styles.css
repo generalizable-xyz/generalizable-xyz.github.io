@@ -285,10 +285,11 @@ footer {
         padding: 1rem;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         gap: 0.5rem;
+        z-index: 1000;
     }
     
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
     
     .nav-links a {
