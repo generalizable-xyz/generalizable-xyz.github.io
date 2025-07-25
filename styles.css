@@ -24,7 +24,6 @@ header {
     width: 100%;
     top: 0;
     z-index: 1000;
-    overflow-x: auto;
 }
 
 nav {
@@ -263,9 +262,15 @@ footer {
 
 @media (max-width: 768px) {
     /* Navigation */
+    header {
+        position: fixed;
+        overflow: visible;
+    }
+    
     nav {
         padding: 1rem;
         position: relative;
+        overflow: visible;
     }
     
     .mobile-menu-toggle {
@@ -283,13 +288,17 @@ footer {
         background: #ffffff;
         flex-direction: column;
         padding: 1rem;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         gap: 0.5rem;
         z-index: 1000;
+        border-top: 2px solid #f0f0f0;
     }
     
     .nav-links.active {
         display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
     }
     
     .nav-links a {
