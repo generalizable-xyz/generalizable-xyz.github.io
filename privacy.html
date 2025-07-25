@@ -84,6 +84,43 @@
         footer a:hover {
             color: #93c5fd;
         }
+        
+        /* Mobile styles for privacy page */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1e3a5f;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                gap: 0.5rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .privacy-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .privacy-content h1 {
+                font-size: 1.75rem;
+            }
+            
+            .privacy-content h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -201,5 +238,7 @@
             </div>
         </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
