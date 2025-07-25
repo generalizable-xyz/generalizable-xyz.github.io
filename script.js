@@ -3,9 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
+    console.log('Mobile menu toggle:', mobileMenuToggle);
+    console.log('Nav links:', navLinks);
+    
+    if (mobileMenuToggle && navLinks) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Menu clicked!');
             navLinks.classList.toggle('active');
+            console.log('Active class toggled:', navLinks.classList.contains('active'));
         });
         
         // Close menu when clicking a link
@@ -15,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.classList.remove('active');
             });
         });
+    } else {
+        console.error('Menu elements not found!');
     }
     
     // Smooth scrolling for anchor links
